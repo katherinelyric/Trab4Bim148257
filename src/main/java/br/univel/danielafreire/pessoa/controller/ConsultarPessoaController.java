@@ -64,7 +64,6 @@ public class ConsultarPessoaController implements Serializable {
 	 * Utiliza somente o M ou o F do sexo para utilizar na persistencia
 	 */
 	public void Editar(PessoaModel pessoaModel){
-		 
 		pessoaModel.setSexo(pessoaModel.getSexo().substring(0, 1));
 		this.pessoaModel = pessoaModel;
 	}
@@ -72,9 +71,18 @@ public class ConsultarPessoaController implements Serializable {
 	 * Atualização dos registros alterados
 	 */
 	public void AlterarRegistro(){
-		 
 		this.pessoaRepository.AlterarRegistro(this.pessoaModel);
 		this.init();
+	}
+	
+	/***
+	 * Método que chama a exclusão do registro e atualização da lista
+	 */
+	public void ExcluirPessoa(PessoaModel pessoaModel){
+		//chama a exclusão passando o codigo
+		this.pessoaRepository.ExcluirRegistro(pessoaModel.getCodigo());
+		//remoção do item da exibição
+		this.pessoas.remove(pessoaModel);
 	}
  
  

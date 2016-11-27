@@ -124,4 +124,14 @@ public class PessoaRepository {
 
 		entityManager.merge(pessoaEntity);
 	}
+	
+	/***
+	 * Exclusão de um registro do banco, através do codigo da pessoa
+	 */
+	public void ExcluirRegistro(int codigo){
+		entityManager =  Uteis.JpaEntityManager();		
+		PessoaEntity pessoaEntity = this.GetPessoa(codigo);
+		entityManager.remove(pessoaEntity);
+		
+	}
 }
