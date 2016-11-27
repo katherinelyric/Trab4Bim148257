@@ -23,7 +23,7 @@ import br.univel.danielafreire.repository.PessoaRepository;
 /**
  *Classe para consulta de pessoas pelo carousel 
  */
-public class consultarPessoaCarouselController implements Serializable{
+public class ConsultarPessoaCarouselController implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	 

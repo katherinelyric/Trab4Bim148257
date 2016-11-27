@@ -18,7 +18,9 @@ import javax.persistence.Table;
 @NamedQueries({ 
 	
 	// Retorno dos registros encontrados de acordo com a query abaixo
-	@NamedQuery(name = "PessoaEntity.findAll",query= "SELECT p FROM PessoaEntity p")
+	@NamedQuery(name = "PessoaEntity.findAll",query= "SELECT p FROM PessoaEntity p"),
+	//Agrupa as pessoas pela origem de cadastro 
+	@NamedQuery(name="PessoaEntity.GroupByOrigemCadastro",query= "SELECT p.origemCadastro, count(p) as total FROM PessoaEntity p GROUP By p.origemCadastro")
 })
 
 /*
